@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from methods import compute_nonlinear, compute_linear, compute_errors
 
-# --- Event Functions ---
 def run_nonlinear():
     tree_nl.delete(*tree_nl.get_children())
     try:
@@ -26,7 +25,6 @@ def run_errors():
         lbl_res_err.config(text=compute_errors(float(ent_true.get()), float(ent_approx.get())))
     except Exception as e: messagebox.showerror("Error", str(e))
 
-# --- GUI Setup ---
 root = tk.Tk()
 root.title("Smart Numerical Calculator")
 root.geometry("880x600")
@@ -53,7 +51,7 @@ for col, t in zip(tree_nl["columns"], ["n", "x_n", "f(x_n)", "x_{n+1}", "Error"]
     tree_nl.heading(col, text=t); tree_nl.column(col, anchor="center", width=150)
 tree_nl.pack(fill="both", expand=True)
 
-# --- Tab 2: Linear ---
+
 tab2 = ttk.Frame(notebook, padding=10)
 notebook.add(tab2, text=" 2. Linear Systems ")
 
@@ -84,7 +82,7 @@ for col, t in zip(tree_lin["columns"], ["k", "x", "y", "z", "Max Error"]):
     tree_lin.heading(col, text=t); tree_lin.column(col, anchor="center", width=150)
 tree_lin.pack(fill="both", expand=True)
 
-# --- Tab 3: Errors ---
+
 tab3 = ttk.Frame(notebook, padding=20)
 notebook.add(tab3, text=" 3. Error Analysis ")
 
