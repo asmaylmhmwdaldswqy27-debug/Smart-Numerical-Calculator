@@ -32,7 +32,6 @@ root.geometry("880x600")
 notebook = ttk.Notebook(root)
 notebook.pack(fill="both", expand=True, padx=10, pady=10)
 
-# --- Tab 1: Nonlinear ---
 tab1 = ttk.Frame(notebook, padding=10)
 notebook.add(tab1, text=" 1. Nonlinear Equations ")
 
